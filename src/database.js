@@ -4,6 +4,7 @@ const db_ = process.env.DB_url
 console.log('base de datos : ', db_);
 
 mongoose.connect(db_, {
+
  
 });
 const db = mongoose.connection;

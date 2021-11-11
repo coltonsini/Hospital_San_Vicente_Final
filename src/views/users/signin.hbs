@@ -1,7 +1,7 @@
 <div class="body-form">
     <div class="container4">
     <h1> Iniciar Sesion</h1>
-    <form action="/users/signin" method="POST">
+    <form action="/users/signin" method ="POST">
         <div class="Detalles_usuario">
                     <div class="input-box">
                         <span class="details">Correo Electronico</span>
@@ -15,7 +15,9 @@
                     </div>
                  </div>
         <div class="olvide"> Olvido Contraseña? </div>
-        <input type="submit" value= "Iniciar Sesion">
+        <div class="button">
+                    <input type="submit"  value="Iniciar sesion">
+                </div>
         <div class="iniciar">
              No tiene cuenta? <a href="/users/signup"> Registrarse </a>
         </div>
@@ -25,19 +27,4 @@
 </div>
 
 
-<!--
-<section class="iniciosesion">
-        <article class="form-registro">
-            <form action="/users/signin" method="POST">
-                <img id="logosesion" src="/src/img/logo2.png" alt="">
-                <h4>Inicio de sesion</h4>
-                <input class="control" type="email" name="email"  placeholder="Escriba su correo" autofocus>
-                <input class="control" type="password" name="password" placeholder="Escriba su contraseña">
-                <div><input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Recordar usuario</label></div>
-                <input class="botoniniciosesion" type="submit" value="Iniciar sesion">
-                <p><a href="/users/signup">No tengo cuenta</a></p>
-            </form>
-            
-        </article>
-</section>
--->
+
