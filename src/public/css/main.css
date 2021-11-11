@@ -285,18 +285,9 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   display: block;
 }
 
-#mision {
-  background-image: url("../img/mision.png");
-  background-size: cover;
-}
 
-#vision {
-  background-image: url("../img/vision.png");
-  background-size:contain;
-  background-position-x: left;
-  background-repeat: no-repeat;
 
-}
+
 
 #titlevision {
   color: #fff;
@@ -318,6 +309,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   width: 100%;
   height: auto;
   justify-content: center;
+  align-items: center;
 }
 
 .container1 {
@@ -360,17 +352,6 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   text-align: justify;
 }
 
-@media (max-width: 991px) {
-  .about1 .about-img img {
-    max-width: 70%;
-  }
-}
-
-@media (max-width: 767px) {
-  .about1 .about-img img {
-    max-width: 90%;
-  }
-}
 
 .Publicaciones h4 {
   text-align: center;
@@ -454,7 +435,7 @@ footer {
   flex-flow: row wrap;
   margin-top: 5rem;
   width: 100%;
-  background: #BDAA09;
+  background: linear-gradient(90deg, rgba(252,239,90,1) 0%, rgba(232,215,59,1) 43%, rgba(148,127,22,1) 100%);
   justify-content: center;
   align-items: center;
 }
@@ -463,7 +444,7 @@ footer {
   flex-flow: row wrap;
   height: auto;
   width: 100%;
-  background: #BDAA09;
+  background: linear-gradient(90deg, rgba(252,239,90,1) 0%, rgba(232,215,59,1) 43%, rgba(148,127,22,1) 100%);
   justify-content: center;
   align-items: center;
 }
@@ -797,7 +778,7 @@ p {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: rgb(241, 241, 241);
+  background: linear-gradient(90deg, rgba(136,167,110,1) 0%, rgba(255,255,255,1) 43%, rgba(193,193,193,1) 100%);
 }
 
 .img_servicios {
@@ -821,13 +802,13 @@ p {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: rgb(241, 241, 241);
+  background: linear-gradient(90deg, rgba(136,167,110,1) 0%, rgba(255,255,255,1) 43%, rgba(193,193,193,1) 100%);
   padding: 1rem;
   padding-bottom: 1rem;
 }
 
 .contenedor {
-  background-color: #598656;
+  background-color: none;
   width: 100%;
   padding: 1rem;
   padding-top: 5rem;
@@ -1167,3 +1148,81 @@ p {
     display: flex;
     
   }
+
+/* Citas */
+
+.container5{
+  max-width: 700px;
+  width: 100%;
+  background: rgb(13, 121, 31);
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.Detalles_usuario .input-box .detalles {
+  display: block;
+  color: white;
+   font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input[type="date"]{
+  background-color: rgb(255, 255, 255); 
+ 
+}
+
+.container6{
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.contenedor2{
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+}
+.person-image{
+  display: flex;
+  
+  height: 450px;
+  padding: 2.5rem;
+  width: 470px;
+  max-width: 500px;
+}
+
+.Vision-cont{
+  font-size: px;
+  font-weight: 350;
+} 
+.titulovi{
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+}
+
+.container7{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(252,239,90,1) 0%, rgba(232,215,59,1) 43%, rgba(148,127,22,1) 100%);
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.person-image2{
+
+  display: flex;
+  height: 450px;
+  padding: 2.5rem;
+  width: 440px;
+  max-width: 500px;
+}
