@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy
-const Usuario = require('../models/Users');
-const { matchPassword } = require('../utils');
+const User = require('../models/Users');
+// const { matchPassword } = require('../utils');
 
 passport.use(new LocalStrategy({
     usernameField: 'email'
@@ -24,7 +24,7 @@ passport.serializeUser((user, done) => {
 })
 
 passport.deserializeUser((id, done) => {
-    Usuario.findById(id, (err, user) => {
+    User.findById(id, (err, user) => {
         done(err, user);
     })
 })

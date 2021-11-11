@@ -9,5 +9,8 @@ const UserSchema = new Schema({
     date: { type: Date, default: Date.now },
 });
 
+UserSchema.methods.matchPassword = function(pass) {
+    return bcrypt.compare(pass, this.pass);
+}
 
 module.exports = mongoose.model('User', UserSchema);
