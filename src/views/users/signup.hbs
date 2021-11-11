@@ -1,0 +1,74 @@
+ <div class="body-form">
+        <div class="container3">
+            <div class="title"> Registro de Usuario</div>
+             <form action="/users/signup" method="POST">
+                 <div class="Detalles_usuario">
+                    <div class="input-box">
+                        <span class="details">Nombre Completo</span>
+                        <input type="text" placeholder=" Ingresa Tu nombre "  name="name" required>
+                    </div>
+                 </div>
+                 <div class="Detalles_usuario">
+                    <div class="input-box">
+                        <span class="details">Correo </span>
+                        <input type="email" placeholder=" Ingresa Tu Correo " required name="email" value="{{email}}">
+                    </div>
+                 </div>
+                 <div class="Detalles_usuario">
+                    <div class="input-box">
+                        <span class="details">Contraseña </span>
+                        <input type="password" placeholder=" Ingresa Tu Contraseña " required name="pass" value="{{pass}}">
+                    </div>
+                 </div>
+                 <div class="Detalles_usuario">
+                    <div class="input-box">
+                        <span class="details">Confirmar Contraseña</span>
+                        <input type="password" placeholder=" Ingresa la confirmación de tu Contraseña " required name="password" value="{{password}}">
+                    </div>
+                 </div>
+                <div class="genero">
+                    <span class="Titulo-Genero"> Genero </span>
+                         <input type="radio" name="genero" id="dot-1">
+                         <input type="radio" name="genero" id="dot-2">
+                         <input type="radio" name="genero" id="dot-3">
+                    <div class="categoria">
+                        
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Hombre</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Mujer</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender"> Prefiero no decirlo</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit"  value="Registrarse">
+                </div>
+             </div>
+        </div>
+    </div>
+
+
+
+<!--
+<section class="iniciosesion">
+        <article class="form-registro">
+            <form action="/users/signup" method="POST">
+                 <img id="logosesion" src="/src/img/logo2.png" alt="">
+                 <h4>Registro</h4>
+                <input class="control" type="text" name="nombre"  placeholder="Nombre Completo" value="{{nombre}}">
+                <input class="control" type="password" name="pass" placeholder="Escriba su contraseña" value="{{pass}}">
+                 <input class="control" type="password" name="password"  placeholder="Confirmar contraseña" value="{{password}}">
+                 <input type="email" class="control" name="email" placeholder="Escriba su email" value="{{email}}">
+                <input type="submit" class="botoniniciosesion"  value="registrarse">
+           
+             </form>
+        </article>
+</section>
+-->

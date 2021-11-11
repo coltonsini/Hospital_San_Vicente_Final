@@ -26,7 +26,9 @@ app.engine('.hbs', handle({
 app.set('view engine', '.hbs');
 
 // Middlewares
-app.use(express.urlencoded({extended: false}));
+
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(method0verride('_method'));
 app.use(session({
     secret: 'pollo',
