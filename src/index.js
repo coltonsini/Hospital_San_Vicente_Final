@@ -28,7 +28,7 @@ app.set('view engine', '.hbs');
 // Middlewares
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 app.use(method0verride('_method'));
 app.use(session({
     secret: 'pollo',
@@ -41,7 +41,7 @@ app.use(passport.session());
 app.use(flash());
 
 // Global Variables
-app.use((req, res, next) => {
+app.use((req, res, next) => {  
     // res.locals.user = req.user || null;
     res.locals.error_msg = req.flash('error_msg');
     res.locals.sucess_msg = req.flash('sucess_msg');

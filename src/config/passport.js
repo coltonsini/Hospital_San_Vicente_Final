@@ -1,49 +1,47 @@
 // const passport = require('passport');
-// const LocalStrategy = require('passport-local').Strategy
-// const User = require('../models/Users');
-// // const { matchPassword } = require('../utils');
+// const LocalStrategy = require('passport-local').Strategy;
+// const User = require('../models/User');
 
-// passport.use(new LocalStrategy({
-//     usernameField: 'email'
-// }, async (email, pass, done) => {
-//     const user = await User.findOne ({email: email});
+// passport.use(new LocalStrategy ({
+//     usernameField: 'email',
+//     passwordField: 'password '
+// }, async (email, password, done) => {
+//     const user = await User.findOne({email: email})
 //     if(!user) {
-//         return done(null, false, { message: 'Usuario no encontrado'});
+//         return done(null, false, { message: 'Usuario No Encontrado'});
 //     } else {
-//         const match = await user.matchPassword(pass);
-//         if(match){
+//         const match = user.matchPassword(password);
+//         if(match) {
 //             return done(null, user);
 //         } else {
-//             return done(null, false, {message: 'Contraseña incorrecta'});
+//             return done(null, false, {message: 'Contraseña Incorrecta'});
 //         }
 //     }
+
 // }));
 
 // passport.serializeUser((user, done) => {
 //     done(null, user.id);
-// })
+// });
 
 // passport.deserializeUser((id, done) => {
 //     User.findById(id, (err, user) => {
 //         done(err, user);
-//     })
-// })
-
+//     });
+// });
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('../models/Users');
-const { matchPassword } = require('../utils');
+const Users = require('../models/User');
 
 passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'pass'
-}, async(email, pass, done) => {
-    const user = await User.findOne({ email: email });
+    usernameField: 'email'
+}, async(email, password, done) => {
+    const user = await Users.findOne({ email: email });
     if (!user) {
         return done(null, false, { message: 'Not User Found. ' });
     } else {
-        const match = await User.matchPassword(pass);
+        const match = await user.matchPassword(password);
         if (match) {
             return done(null, user);
         } else {
@@ -57,7 +55,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
+    Users.findById(id, (err, user) => {
         done(err, user);
     })
 })
