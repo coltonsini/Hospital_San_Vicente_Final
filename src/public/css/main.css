@@ -1244,3 +1244,21 @@ input[type="date"]{
   color: beige;
   position: relative;
 }
+
+.titleCita{
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.imagen-San{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
