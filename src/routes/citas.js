@@ -4,14 +4,11 @@ const router = express.Router();
 const Cita = require("../models/Citas");
 const { isAuthenticated } = require('../helpers/auth');
 
-// router.get('/citas/crear', isAuthenticated, (req, res) => {
-
-router.get('/citas/crear', (req, res) => {
+router.get('/citas/crear', isAuthenticated, (req, res) => {
     res.render('citas/nueva-cita');
 });
-// router.post('/citas/nueva-cita', isAuthenticated, async (req, res) =>{
 
-router.post('/citas/nueva-cita', async (req, res) =>{
+router.post('/citas/nueva-cita',  isAuthenticated, async (req, res) =>{
     const { title, description } = req.body;
     const errors = [];
     if(!title){
