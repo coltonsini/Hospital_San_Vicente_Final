@@ -208,8 +208,8 @@ footer {
 }
 
 .row {
+
   display: flex;
-  
   width: 100%;
   margin: 5px;
 }
@@ -527,7 +527,8 @@ p {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background: linear-gradient(90deg, rgba(136,167,110,1) 0%, rgba(255,255,255,1) 43%, rgba(193,193,193,1) 100%);
+  font-size: 35px;
+  font-weight: 500;
   padding: 1rem;
   padding-bottom: 1rem;
 }
@@ -876,6 +877,7 @@ p {
 /* Citas */
 
 .container5{
+
   max-width: 700px;
   width: 100%;
   background: rgb(13, 121, 31);
@@ -979,8 +981,14 @@ input[type="date"]{
   display: flex;
   align-items: center;
   justify-content: center;
+  height: auto;
   width: 100%;
   padding: 2rem;
+}
+
+.logo-cita{
+  height: 200px;
+  width: 200px;
 }
 
 /* Navbar V2 */
@@ -1262,4 +1270,33 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
+}
+
+
+/*citas */
+
+.Container-citas{
+
+  display: flex;
+  width: 100%;
+  background: beige;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.Citamed{
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.nombrecita{
+  color: black;
+  font-weight: 500;
+
+}
+
+.hola{
+  
 }

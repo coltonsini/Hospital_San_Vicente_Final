@@ -1,6 +1,6 @@
 {{#each errors }}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-
+        {{text}}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -13,28 +13,37 @@
     <div class="container5">
         <div class="titleCita"> AGENDA TÚ CITA  </div>
         <div class="container-cita">
-            <form action="">
+            <form action="/citas/nueva-cita" method="POST">
                 <div class="imagen-San">
-                    <img src="../../img/Sanvicente.png">
+                    <img src="../../img/Clinica.png" class="logo-cita">
                 </div>
                 <div class="Detalles_usuario">
                     <div class="input-box">
                         <span class="detalles">Nombre Completo</span>
-                        <input type="text" placeholder=" Ingresa Tu nombre "  name="name" required>
+                        <input type="text" placeholder=" Ingresa Tu nombre "  name="title" >
                     </div>
                  </div>
                  <div class="Detalles_usuario">
                     <div class="input-box">
                         <span class="detalles">Celular</span>
-                        <input type="text" placeholder=" Ingresa Tu celular "  name="name" required>
+                        <input type="text" placeholder=" Ingresa Tu celular "  name="numero" >
+                    </div>
+                 </div>
+                 <div class="Detalles_usuario">
+                    <div class="input-box">
+                        <span class="detalles">Especialidad</span>
+                        
+                        <input type="text" placeholder=" Ingresa la especialidad de tu cita "  name="description" >
                     </div>
                  </div>
                  <div class="Detalles_usuario">
                    <div class="input-box">
                         <span class="detalles">Fecha Cita Médica</span>
-                        <input type="date" placeholder=" Ingresa Tu nombre "  name="name" required>
+                        <input type="date" placeholder=" Ingresa Tu nombre "  name="date" >
                     </div>
-                       
+                   <div class="button">
+                    <input type="submit"  value="Agendar">
+                </div>    
                  </div>
             </form>
         </div>

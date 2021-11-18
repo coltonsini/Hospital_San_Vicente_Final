@@ -1,26 +1,45 @@
-<div class="row">
-    {{#each citas}}
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title d-flex justify-content-betweeen align-items-center">
-                    {{tittle}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+<div class="Container-citas">
+       <div class="row">
+         {{#each citas }}
+        <div class="col-md-3">
+                <div class="Citamed">
+                    <h1 class="nombrecita">  ddd {{User.title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a></h1>
+            
+                    <h1 class="nombrecita">  ddd {{description}}</h1>
+
+                    <h1 class="nombrecita">  ddd {{numero}}</h1>
+
+                    <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-danger btn-block btn-sm" type="submit">
+                        Cancelar Cita
+                        </button>
+                    </form>
+                </div>
+        </div>
+    </div>
+   
+{{!-- 
+          <div class="Detalles_usuario">
+                <div class="input-box">
+                     <h4 class="card-title">
+                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
                 </h4>
-                <p> {{description}}</p>
-                <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
+                 <p> {{description}}</p>
+                 <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                          <button class="btn btn-danger btn-block btn-sm" type="submit">
                     Cancelar Cita
                 </button>
                 </form>
                
-            </div>
-        </div>
-    </div>
+         </div> --}}
+      
+    
     {{else}}
     <div class="card mx-auto">
         <div class="card-body">
-            <p class="citas">No hay citas creadas aun</p>
+            <p class="citas">No hay citas agendadas aun</p>
             <a href="/citas/crear" class="btn btn-success btn-block">Crea una Cita</a>
         </div>
     </div>

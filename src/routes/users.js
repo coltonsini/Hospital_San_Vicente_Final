@@ -34,7 +34,7 @@ router.post('/users/signup', async (req, res) => {
   // if (validateEmail(email)) {
   //   errors.push({ text: "Porfavor ingresa un correo valido" });
   // }
-  if (password !== confirm_password) {
+  if (password != confirm_password) {
     errors.push({ text: "La contraseña no coincide" });
   }
   if (password.lenght < 4) {
@@ -61,4 +61,5 @@ router.get("/users/logout"), (req, res) => {
     req.logout();
     res.redirect("/");
   };
+  
 module.exports = router;
