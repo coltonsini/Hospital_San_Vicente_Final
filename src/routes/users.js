@@ -18,7 +18,7 @@ router.get('/users/signup', (req, res) => {
   res.render('users/signup');
 });
 
-router.post('/users/signup', async (req, res) => {
+router.post('/users/signup', async(req, res) => {
   const { name, email, password, confirm_password } = req.body;
   const errors = [];
   console.log(req.body)
@@ -41,12 +41,12 @@ router.post('/users/signup', async (req, res) => {
     errors.push({ text: "La contraseña debe tener al menos 4 caracteres" });
   }
   if (errors.lenght > 0) {
-    res.render('users/signup', { errors, name, email, password, confirm_password });
+    res.render('/users/signup', { errors, name, email, password, confirm_password });
   } else {
     const emailUser = await User.findOne({ email: email });
     if (emailUser) {
       req.flash('error_msg', 'El correo ingresado ya esta en uso');
-      res.redirect('users/signup');
+      res.redirect('/users/signup');
     }
         const NewUser = await new User({ name, email, password });
         NewUser.password = await NewUser.encryptPassword(password);
@@ -57,9 +57,9 @@ router.post('/users/signup', async (req, res) => {
     }
 });
 
-router.get("/users/logout"), (req, res) => {
-    req.logout();
-    res.redirect("/");
-  };
+router.get('/users/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
   
 module.exports = router;

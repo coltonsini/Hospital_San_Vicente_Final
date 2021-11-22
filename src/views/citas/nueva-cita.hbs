@@ -31,15 +31,19 @@
                  </div>
                  <div class="Detalles_usuario">
                     <div class="input-box">
-                        <span class="detalles">Especialidad</span>
-                        
-                        <input type="text" placeholder=" Ingresa la especialidad de tu cita "  name="description" >
+                        <span class="detalles">Escoge la especialidad</span>
+                                <select  name="description">
+                                    <option >Medicina General</option>
+                                    <option >Mantenimiento de la Salud</option>
+                                    <option >Odontologia </option>
+                                </select>
+                        {{!-- <input type="text" placeholder=" Ingresa la especialidad de tu cita "  name="description" > --}}
                     </div>
                  </div>
                  <div class="Detalles_usuario">
                    <div class="input-box">
                         <span class="detalles">Fecha Cita Médica</span>
-                        <input type="date" placeholder=" Ingresa Tu nombre "  name="date" >
+                        <input type="datetime-local" placeholder=" datetime "  name="date" >
                     </div>
                    <div class="button">
                     <input type="submit"  value="Agendar">

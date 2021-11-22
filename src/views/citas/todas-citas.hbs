@@ -1,40 +1,42 @@
 <div class="Container-citas">
        <div class="row">
-         {{#each citas }}
+        {{#each citas }}
         <div class="col-md-3">
                 <div class="Citamed">
-                    <h1 class="nombrecita">  ddd {{User.title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a></h1>
-            
-                    <h1 class="nombrecita">  ddd {{description}}</h1>
+                    <div class="input-box">
+                        <span class="Citaspan">Nombre Completo* </span>
+                        <h1 class="nombrecita">   {{ title}}</h1>
+                    </div>
+                    <div class="input-box">
+                        <span class="Citaspan"> Especialidad* </span>
+                        <h1 class="nombrecita">   {{ description }}</h1>
+                    </div>
+                    <div class="input-box">
+                        <span class="Citaspan"> Numero Telefonico* </span>
+                        <h1 class="nombrecita">   {{ numero }}</h1>
+                    </div>
+                    <div class="input-box">
+                        <span class="Citaspan"> Fecha* </span>
+                        <h1 class="nombrecita">   {{date }}</h1>
+                    </div>
+                    
 
-                    <h1 class="nombrecita">  ddd {{numero}}</h1>
-
-                    <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger btn-block btn-sm" type="submit">
+                    
+                    
+                  <form action="/citas/eliminar/{{_id}}?_method=DELETE" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-success btn-block btn-sm" type="submit">
                         Cancelar Cita
                         </button>
-                    </form>
+                  </form>
+                        
+                        
+                    
                 </div>
         </div>
     </div>
    
-{{!-- 
-          <div class="Detalles_usuario">
-                <div class="input-box">
-                     <h4 class="card-title">
-                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-                </h4>
-                 <p> {{description}}</p>
-                 <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                         <button class="btn btn-danger btn-block btn-sm" type="submit">
-                    Cancelar Cita
-                </button>
-                </form>
-               
-         </div> --}}
-      
+
     
     {{else}}
     <div class="card mx-auto">
@@ -45,3 +47,21 @@
     </div>
     {{/each}}
 </div>
+
+{{!-- 
+          <div class="Detalles_usuario">
+                <div class="input-box">
+                     <h4 class="card-title">
+                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                </h4>
+                 <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                 <p> {{description}}</p>
+                 <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                         <button class="btn btn-danger btn-block btn-sm" type="submit">
+                    Cancelar Cita
+                </button>
+                </form>
+               
+         </div> --}}
+      

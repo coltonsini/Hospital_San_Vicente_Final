@@ -48,14 +48,14 @@ router.get('/citas/edit/:id', async (req, res) => {
     res.render('citas/editar-cita', {cita});
 });
 
-router.put('/citas/edit-cita/:id', async (req, res) => {
+router.put('/citas/edit-cita/:id', isAuthenticated, async (req, res) => {
     const {title, numero, date, description} = req.body;
     await Cita.findByIdAndUpdate(req.params.id, { title, numero, date , description});
     req.flash('sucess_msg', 'Cita Actualizada Satisfactoriamente');
     res.redirect('/citas');
 })
 
-router.delete('/citas/eliminar/:id', async (req, res) => {
+router.delete('/citas/eliminar/:id', isAuthenticated, async (req, res) => {
     await Cita.findByIdAndDelete(req.params.id);
     req.flash('sucess_msg', 'Cita Eliminada Satisfactioriamente');
     res.redirect('/citas');
