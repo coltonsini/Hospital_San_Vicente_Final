@@ -154,7 +154,6 @@ footer {
 .aboutprincipal {
   display: flex;
   flex-flow: row wrap;
-  margin-top: 5rem;
   width: 100%;
   background: linear-gradient(90deg, rgba(252,239,90,1) 0%, rgba(232,215,59,1) 43%, rgba(148,127,22,1) 100%);
   justify-content: center;
@@ -208,7 +207,7 @@ footer {
 }
 
 .row {
-  display: flex;
+
   
   width: 100%;
   margin: 5px;
@@ -289,9 +288,7 @@ img {
   text-align: center;
 }
 
-.carruselmayor {
-  padding-top: 5rem;
-}
+
 
 @media (max-width: 600px) {
   .carruselmayor {
@@ -1267,7 +1264,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 
 .Container-citas{
 
-  display: flex;
+  /* display: flex; */
   width: 100%;
   background: beige;
   padding: 25px 30px;
@@ -1284,9 +1281,9 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 
 .nombrecita{
   color: black;
-  font-weight: 200;
-  font-size: 16px;
-  
+  font-weight: 300;
+  font-size: 18px;
+  padding: 1rem;
 }
 
 .logo-cita{
@@ -1296,10 +1293,20 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 
 .Citaspan{
   color: rgb(27, 155, 59);
+  font-size: 20px;
   font-weight: bold;
+  padding: 1.5rem;
 }
 
 .input-e{
   margin-bottom: 15px;
   width: cal(100%/ 2 - 20px);
 }
+
+.citas-edit{
+  text-align: center;
+  background-color: none;
+  font-size: 30px;
+  font-weight: 500;
+}
+

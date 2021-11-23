@@ -9,23 +9,22 @@ router.get('/citas/crear', isAuthenticated, (req, res) => {
 });
 
 router.post('/citas/nueva-cita',  isAuthenticated, async (req, res) =>{
-    console.log(req.body);
-    const { title, numero, date, description } = req.body;
+    const { title, description, numero, date } = req.body;
     const errors = [];
     if(!title){
-        errors.push({text: 'Pofavor ingrese su nombre'});
+        errors.push({text: 'Please Write a Title'});
     }
-    if (!numero){
-        errors.push({text: 'Porfavor ingrese su numero'});
+    if (!description){
+        errors.push({text: 'Please Write a Description'});
     }
-    if (errors.lenght > 0) {
-        res.render('citas/nueva-cita', {
+    if (errors.lenght>0) {
+        res.render(citas/nueva-cita, {
             errors,
             title,
-            numero
+            description
         });
     } else {
-        const newCita = new Cita({title, numero, date, description });
+        const newCita = new Cita({title, description, numero, date});
         newCita.user = req.user.id;
         await newCita.save();
         req.flash('sucess_msg', 'Cita creada satisfactoriamente');
@@ -35,18 +34,21 @@ router.post('/citas/nueva-cita',  isAuthenticated, async (req, res) =>{
 });
 
 router.get('/citas', isAuthenticated, async (req, res) => {
-    const citas = await Cita.find({user: req.user.id}).sort({date: 'desc'});
+    const citas = await Cita.find({user: req.user.id}).lean();
     res.render('citas/todas-citas', { citas });
+    // const Cita = await Cita.find({user: req.user.id}).sort({date: 'desc'});
+    // res.render('/citas/todas-citas', { citas });
 });
 
 router.get('/citas/edit/:id', async (req, res) => {
     const cita = await Cita.findById(req.params.id);
-    if(cita.user != req.user.id){
+    if(cota.user != req.user.id){
         req.flash('error_msg', 'Not Authorized');
         return res.redirect('/citas');
     }
-    res.render('citas/editar-cita', {cita});
+    res.render('citas/edit-note', {cita});
 });
+
 
 router.put('/citas/edit-cita/:id', isAuthenticated, async (req, res) => {
     const {title, numero, date, description} = req.body;

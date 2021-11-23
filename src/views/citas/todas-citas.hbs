@@ -1,7 +1,9 @@
-<div class="Container-citas">
-       <div class="row">
+{{!-- <div class="Container-citas">
+    <div class="container py-5">
+    <div class="row">
         {{#each citas }}
-        <div class="col-md-3">
+                 <div class="col-md-4">
+                   
                 <div class="Citamed">
                     <div class="input-box">
                         <span class="Citaspan">Nombre Completo* </span>
@@ -20,48 +22,75 @@
                         <h1 class="nombrecita">   {{date }}</h1>
                     </div>
                     
-
-                    
-                    
                   <form action="/citas/eliminar/{{_id}}?_method=DELETE" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
                         <button class="btn btn-success btn-block btn-sm" type="submit">
                         Cancelar Cita
                         </button>
-                  </form>
-                        
-                        
-                    
+                  </form>  
                 </div>
+                
+             
+                                
+  
         </div>
-    </div>
-   
 
+    </div>
+       
     
     {{else}}
     <div class="card mx-auto">
         <div class="card-body">
-            <p class="citas">No hay citas agendadas aun</p>
+            <p class="citas-edit">No hay citas agendadas aun</p>
             <a href="/citas/crear" class="btn btn-success btn-block">Crea una Cita</a>
         </div>
     </div>
     {{/each}}
-</div>
+</div> --}}
+<div class="container">   
+ 
+    <div class="card-deck mt-3">
+        {{#each citas }}
+            <div class="card text-center border-info">
+              <div class="card-body">
+                <div class="Citamed">
+                            <div class="input-box">
+                                <span class="Citaspan">Nombre Completo* </span>
+                                <h1 class="nombrecita">   {{ title}}</h1>
+                            </div>
+                            <div class="input-box">
+                                <span class="Citaspan"> Especialidad* </span>
+                                <h1 class="nombrecita">   {{ description }}</h1>
+                            </div>
+                            <div class="input-box">
+                                <span class="Citaspan"> Numero Telefonico* </span>
+                                <h1 class="nombrecita">   {{ numero }}</h1>
+                            </div>
+                            <div class="input-box">
+                                <span class="Citaspan"> Fecha* </span>
+                                <h1 class="nombrecita">   {{date }}</h1>
+                            </div>
+                            
+                        <form action="/citas/eliminar/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-success btn-block btn-sm" type="submit">
+                                Cancelar Cita
+                                </button>
+                        </form>  
+                    </div>
+                </div>
+            </div>          
 
-{{!-- 
-          <div class="Detalles_usuario">
-                <div class="input-box">
-                     <h4 class="card-title">
-                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-                </h4>
-                 <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-                 <p> {{description}}</p>
-                 <form action="/citas/elimitar/{{_id}}?_method=DELETE" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                         <button class="btn btn-danger btn-block btn-sm" type="submit">
-                    Cancelar Cita
-                </button>
-                </form>
-               
-         </div> --}}
       
+
+   
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="citas-edit">No hay citas agendadas aun</p>
+            <a href="/citas/crear" class="btn btn-success btn-block">Crea una Cita</a>
+        </div>
+    </div>
+    {{/each}}
+     </div>
+</div>  
