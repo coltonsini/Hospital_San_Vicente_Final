@@ -1,14 +1,16 @@
-
+{{!-- 
    <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-left">
         <div class="container d-flex align-items-left justify-content-between">
 
             <div class="logo">
-                <h6 class="text-light "><a class="navbar-brand" href="#">
-                        <img id="logo" class="logonav" src="../../img/logo2.png">
+                <h6 class="text-dark "><a class="navbar-brand" href="#">
+                        <img id="logo" class="logonav" src="../../img/logo2.png" >
                     </a><a href="/" id="titulo"><span>SAN VICENTE DE PAUL</span></a></h6>
             </div>
-
+            <button class="nav-toggle1" aria-label="Abrir menuu">
+                     <img src="../../img/ico/menu.png" class="icono" style="width: 30px;"></img> 
+             </button> 
             <nav id="navbar" class="navbar ">
                 <ul>
                     <li><a class="nav-link scrollto active" href="/">Inicio</a></li>
@@ -16,10 +18,10 @@
                     <li><a class="nav-link scrollto" href="/Services">Servicios</a></li>
                     <li><a class="nav-link scrollto" href="/contactUs">Contacto</a></li>
                     {{#if user}}
-                             <div class="separador" style="padding: 1rem;" >
+                    <div class="separador" style="padding: 1rem;" >
                         <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDrropwdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                         role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         Citas
@@ -44,7 +46,7 @@
 
                    
                   </ul>
-                <!-- <img src="src/img/ico/menu.png" class="bi bi-list mobile-nav-toggle"></img> -->
+               
                 
             </nav><!-- .navbar -->
 
@@ -53,3 +55,63 @@
     </div><!-- End Header -->
 
 
+
+   --}}
+
+
+
+   <!-- ======= Header ======= -->
+    <header class="header1">
+    <nav class="nav1">
+      <div class="logos">
+        <a href="/" class="logonav nav-link1" id="logo-desk"><img id="logo-desk" src="../../img/logo2.png"></a>
+        <a href="/" class="logo-mov nav-link1" id="logo-mov"><img id="logo-mov" src="../../img/Logo.png"></a>
+      </div>
+      <button class="nav-toggle1" aria-label="Abrir menuu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu1">
+        <li class="nav-menu-item1">
+          <a href="/" class="nav-menu-link1 nav-link1">Inicio</a>
+        </li>
+        <li class="nav-menu-item1">
+          <a href="/aboutUs" class="nav-menu-link1 nav-link1">Nosotros</a>
+        </li>
+        <li class="nav-menu-item1">
+          <a href="/Services" class="nav-menu-link1 nav-link1">Servicios</a>
+        </li>
+        <li class="nav-menu-item1">
+          <a href="/contactUs" class="nav-menu-link1 nav-link1">Contacto</a>
+        </li>
+        {{#if user}}
+                    <div class="separador" style="padding: 1rem;" >
+                        <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-menu-link1 nav-link1 dropdown-toggle" href="#" id="navbarDropdown"
+                        role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Citas
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class=" nav-link1" href="/citas">Citas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class=" nav-link1" href="/citas/crear" style="text-align: center;">Crear Cita</a>
+                            <div class="dropdown-divider"></div>
+                            <a class=" nav-link1" href="/users/logout" style="padding: 0.5 rem;"> Salir</a>
+                        </div>
+                        </a>
+                    </li>
+                    </ul>
+                    </div>
+
+         {{else}}
+
+                <li class="nav-menu-item1">
+                     <a href="/users/signin" class="nav-menu-link1 nav-link1 nav-menu-link_active1">Inicio sesion</a>
+                </li>
+                     
+         {{/if}}
+      
+      </ul>
+    </nav>
+  </header>
+    </div><!-- End Header -->
